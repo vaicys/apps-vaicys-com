@@ -1,71 +1,113 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - apps_vaicys_com_netcore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    @*<link rel="stylesheet" href="~/css/site.min.css" />*@
+
+    <title>Vytautas Vaičys</title>
+
+    <style type="text/css">
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        body {
+            margin: 0px;
+            background-color: #124;
+        }
+
+        #heading {
+            text-align: center;
+            background-color: #124;
+            padding-top: 70px;
+            padding-bottom: 15px;
+        }
+
+        #subheading {
+            text-align: center;
+            background-color: #456;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            height: 35px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAyCAYAAACUEBHwAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oDBRUfHbu+HNcAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAABB0lEQVQ4y6WTQXLEMAgEe7b0xnwi/8iz6RwEstdJTvHBrkXAiB42H59f8nhe/PL8M7jUv4ISwhwvKDCIV7BKiMRAQGUBUGLcRfeeFJARquofgbKF3AKRLRVYYlfbB7CszowUIU4msAfzoU7Od2kBkHR2ZIFM8oiuKjvL0+RC1xHP5e9Izb5SBEdcd/k15j44Pb0g7WBmojyNm3JgxerSMAktFAa9wKpDx3eh6TYHi6bEUPqxNkLlCeSC7Ll0EKshT7N6ruK8c8pvSuIYF67JD6VxP9tNdVM/6sejLVB3N22Lh9UW6vqKvHybyDPHsm0lF77V60ov8Vy+qY9xd3TVbXNfhvmDCHwDYZMFOzGWpHcAAAAASUVORK5CYII=');
+            /*background: #566b86;
+            background: -moz-linear-gradient(top, #566b86 0%, #324254 100%);
+            background: -webkit-linear-gradient(top, #566b86 0%,#324254 100%);
+            background: linear-gradient(to bottom, #566b86 0%,#324254 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#566b86', endColorstr='#324254',GradientType=0 );*/
+        }
+
+        #footer {
+            text-align: center;
+            color: white;
+            background-color: #124;
+            height: auto;
+            padding: 50px;
+            font: 18pt georgia, sefif;
+            letter-spacing: 3px;
+        }
+
+        #content {
+            background-color: #eeeef0;
+            padding: 50px 0;
+        }
+
+        #container {
+            width: 800px;
+            height: 450px;
+            margin: 0 auto;
+        }
+
+        #left {
+            float: left;
+            width: 350px;
+        }
+
+        #right {
+            float: right;
+            width: 430px;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            font: 3.5em georgia, serif;
+        }
+
+        h2 {
+            margin: 0;
+            color: white;
+            font: italic 1.8em georgia, serif;
+        }
+
+        h3 {
+            margin: 0;
+            font: bold 18pt georgia, serif;
+            text-align: center;
+        }
+
+        ul {
+            font: 1.2em georgia, serif;
+        }
+
+        #footer span {
+            margin: 30px 50px;
+            text-align: center;
+        }
+    </style>
+
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">apps_vaicys_com_netcore</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
+    <div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - apps_vaicys_com_netcore</p>
-        </footer>
     </div>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
+    <partial name="GoogleAnalytics" />
 </body>
 </html>

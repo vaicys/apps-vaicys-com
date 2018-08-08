@@ -1,6 +1,6 @@
 using System;
 
-namespace apps_vaicys_com_netcore.Models
+namespace WebApp.Models
 {
     public class ErrorViewModel
     {

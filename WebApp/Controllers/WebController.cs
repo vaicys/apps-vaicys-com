@@ -4,17 +4,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using apps_vaicys_com_netcore.Models;
+using WebApp.Models;
 
-namespace apps_vaicys_com_netcore.Controllers
+namespace WebApp.Controllers
 {
-    public class MainController : Controller
+    public class WebController : Controller
     {
         public IActionResult Index()
         {
-            throw new Exception("Test");
-            return Redirect("http://www.vaicys.com");
-            //return View();
+            return View();
         }
 
         public IActionResult About()

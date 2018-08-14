@@ -37,7 +37,7 @@ namespace WebApp
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSchemeAndHostRedirect();
+            app.UseProxyHttpsRedirect();
             app.UseExceptionHandler("/Web/Error");
             app.UseStaticFiles();
             app.UseMvc(routes =>

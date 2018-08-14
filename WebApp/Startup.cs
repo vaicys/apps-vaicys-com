@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using apps.vaicys.com.Middleware;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
@@ -28,34 +28,18 @@ namespace WebApp
 
             services
                 .Configure<RouteOptions>(options => options.LowercaseUrls = true);
-
-            if (Environment.IsProduction())
-            {
-                services
-                    .AddHttpsRedirection(options =>
-                    {
-                        options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                        options.HttpsPort = 443;
-                    });
-            }
         }
 
         public void Configure(IApplicationBuilder app)
         {
             if (Environment.IsDevelopment())
             {
-                //app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
 
-            if (Environment.IsProduction())
-            {
-                app.UseExceptionHandler("/Web/Error");
-                app.UseHttpsRedirection();
-            }
-
+            app.UseProxyHttpsRedirect();
+            app.UseExceptionHandler("/Web/Error");
             app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

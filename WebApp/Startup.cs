@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,11 @@ namespace WebApp
             }
 
             app.UseProxyHttpsRedirect();
+
+            var options = new RewriteOptions();
+            options.Rules.Add(new RedirectToWwwRule());
+            app.UseRewriter(options);
+
             app.UseExceptionHandler("/Web/Error");
             app.UseStaticFiles();
             app.UseMvc(routes =>

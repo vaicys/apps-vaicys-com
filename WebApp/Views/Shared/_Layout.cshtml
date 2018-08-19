@@ -1,113 +1,31 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-
-    @*<link rel="stylesheet" href="~/css/site.min.css" />*@
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @if (env.IsDevelopment())
+    {
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    }
+    else
+    {
+    <link rel="stylesheet" href="~/css/site.min.css" />
+    }
     <title>Vytautas Vaičys</title>
-
-    <style type="text/css">
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-        body {
-            margin: 0px;
-            background-color: #124;
-        }
-
-        #heading {
-            text-align: center;
-            background-color: #124;
-            padding-top: 70px;
-            padding-bottom: 15px;
-        }
-
-        #subheading {
-            text-align: center;
-            background-color: #456;
-            padding-top: 5px;
-            padding-bottom: 10px;
-            height: 35px;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAyCAYAAACUEBHwAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oDBRUfHbu+HNcAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAABB0lEQVQ4y6WTQXLEMAgEe7b0xnwi/8iz6RwEstdJTvHBrkXAiB42H59f8nhe/PL8M7jUv4ISwhwvKDCIV7BKiMRAQGUBUGLcRfeeFJARquofgbKF3AKRLRVYYlfbB7CszowUIU4msAfzoU7Od2kBkHR2ZIFM8oiuKjvL0+RC1xHP5e9Izb5SBEdcd/k15j44Pb0g7WBmojyNm3JgxerSMAktFAa9wKpDx3eh6TYHi6bEUPqxNkLlCeSC7Ll0EKshT7N6ruK8c8pvSuIYF67JD6VxP9tNdVM/6sejLVB3N22Lh9UW6vqKvHybyDPHsm0lF77V60ov8Vy+qY9xd3TVbXNfhvmDCHwDYZMFOzGWpHcAAAAASUVORK5CYII=');
-            /*background: #566b86;
-            background: -moz-linear-gradient(top, #566b86 0%, #324254 100%);
-            background: -webkit-linear-gradient(top, #566b86 0%,#324254 100%);
-            background: linear-gradient(to bottom, #566b86 0%,#324254 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#566b86', endColorstr='#324254',GradientType=0 );*/
-        }
-
-        #footer {
-            text-align: center;
-            color: white;
-            background-color: #124;
-            height: auto;
-            padding: 50px;
-            font: 18pt georgia, sefif;
-            letter-spacing: 3px;
-        }
-
-        #content {
-            background-color: #eeeef0;
-            padding: 50px 0;
-        }
-
-        #container {
-            width: 800px;
-            height: 450px;
-            margin: 0 auto;
-        }
-
-        #left {
-            float: left;
-            width: 350px;
-        }
-
-        #right {
-            float: right;
-            width: 430px;
-        }
-
-        h1 {
-            margin: 0;
-            color: white;
-            font: 3.5em georgia, serif;
-        }
-
-        h2 {
-            margin: 0;
-            color: white;
-            font: italic 1.8em georgia, serif;
-        }
-
-        h3 {
-            margin: 0;
-            font: bold 18pt georgia, serif;
-            text-align: center;
-        }
-
-        ul {
-            font: 1.2em georgia, serif;
-        }
-
-        #footer span {
-            margin: 30px 50px;
-            text-align: center;
-        }
-    </style>
-
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
-    <partial name="GoogleAnalytics" />
+@RenderBody()
+@if (env.IsDevelopment())
+{
+<script src="~/js/google-analytics.js"></script>
+<script src="~/js/jquery.slim.js"></script>
+<script src="~/js/popper.js"></script>
+<script src="~/js/bootstrap.js"></script>
+}
+else
+{
+<script src="~/js/site.min.js"></script>
+}
 </body>
 </html>

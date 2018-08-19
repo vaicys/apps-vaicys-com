@@ -2,15 +2,17 @@
   {
     "outputFileName": "wwwroot/css/site.min.css",
     "inputFiles": [
-      "../node_modules/bootstrap/dist/css/bootstrap.css"
+      "wwwroot/css/bootstrap.css",
+      "wwwroot/css/main.css"
     ]
   },
   {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
-      "../node_modules/jquery/dist/jquery.slim.js",
-      "../node_modules/popper.js/dist/umd/popper.js",
-      "../node_modules/bootstrap/dist/js/bootstrap.js"
+      "wwwroot/js/google-analytics.js",
+      "wwwroot/js/jquery.slim.js",
+      "wwwroot/js/popper.js",
+      "wwwroot/js/bootstrap.js"
     ]
   }
 ]

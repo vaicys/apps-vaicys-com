@@ -37,6 +37,10 @@ namespace WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Web/Error");
+            }
 
             app.UseProxyHttpsRedirect();
 
@@ -44,13 +48,13 @@ namespace WebApp
             options.Rules.Add(new RedirectToWwwRule());
             app.UseRewriter(options);
 
-            app.UseExceptionHandler("/Web/Error");
             app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Web}/{action=Index}/{id?}");
+                    template: "{controller=Web}/{action=Index}");
             });
         }
     }

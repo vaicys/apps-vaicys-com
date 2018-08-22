@@ -5,3 +5,4 @@ node_modules
 
 site.min.css
 site.min.js
+*.user

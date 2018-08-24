@@ -1,4 +1,9 @@
-﻿a {
+﻿body {
+    color: white;
+    background-color: #124;
+}
+
+a {
     color: white;
     text-decoration: none;
 }
@@ -8,12 +13,14 @@ a:hover {
     text-decoration: underline;
 }
 
-body {
-    color: white;
-    background-color: #124;
+.title {
+    font-size: 2.5rem;
+    font-weight: 300;
 }
 
-#subheading {
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
     background-color: #456;
     background: #566b86;
     background: -moz-linear-gradient(top, #566b86 0%, #324254 100%);
@@ -22,12 +29,29 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#566b86', endColorstr='#324254',GradientType=0 );
 }
 
-#content {
+.content {
     color: black;
     background-color: #eeeef0;
 }
 
-#footer {
+.footer {
     font-size: 1.5rem;
 }
 
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .title {
+        font-size: 4rem;
+    }
+    .subtitle {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .title {
+        font-size: 6.5rem;
+    }
+    .subtitle {
+        font-size: 2.5rem;
+    }
+}

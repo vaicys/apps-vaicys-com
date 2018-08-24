@@ -1,4 +1,5 @@
-﻿using apps.vaicys.com.Middleware;
+﻿using apps.vaicys.com.Helpers;
+using apps.vaicys.com.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,8 @@ namespace WebApp
 
             services
                 .Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
+            services.AddSingleton<BundleHelper>();
         }
 
         public void Configure(IApplicationBuilder app)

@@ -3,6 +3,10 @@
     background-color: #124;
 }
 
+h1 {
+    font-size: 1.5rem;
+}
+
 a {
     color: white;
     text-decoration: none;

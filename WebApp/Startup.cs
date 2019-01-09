@@ -1,5 +1,4 @@
 ﻿using apps.vaicys.com.Helpers;
-using apps.vaicys.com.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -42,14 +41,8 @@ namespace WebApp
             }
             else
             {
-                app.UseExceptionHandler("/Web/Error");
+                app.UseExceptionHandler("/web/error");
             }
-
-            app.UseProxyHttpsRedirect();
-
-            var options = new RewriteOptions();
-            options.Rules.Add(new RedirectToWwwRule());
-            app.UseRewriter(options);
 
             app.UseStaticFiles();
 
@@ -57,7 +50,7 @@ namespace WebApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Web}/{action=Index}");
+                    template: "{controller=web}/{action=index}");
             });
         }
     }

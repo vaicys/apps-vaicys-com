@@ -1,0 +1,12 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/git'
+    args: [ 'clone', 'https://github.com/vaicys/apps-vaicys-com.git', 'src' ]
+
+  - name: 'gcr.io/cloud-builders/dotnet'
+    args: [ 'publish', '-c', 'Release', '-o', './published' ]
+    dir: './src'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'grc.io/$PROJECT_ID/webapp', '.' ]
+    dir: './published'
